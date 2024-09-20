@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {Routes,Route} from 'react-router-dom'
+import Home from './component/Home';
+import About from './component/About';
+import Contact from './component/Contact';
+import Login from './component/Login';
+import Dasboard from './component/Dasboard';
+import Navbar from './component/Navbar';
+import Singhup from './component/Singhup';
+import { useEffect, useState } from 'react';
 function App() {
+
+  const [islogedin,setislogedin]=useState(false);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+     <Navbar
+     islogedin={islogedin}
+     setislogedin={setislogedin}/>
+
+
+     <Routes>
+        <Route path="/about" element={<About/>}  ></Route>
+        <Route path="/contact" element={<Contact/>}  ></Route>
+        <Route path="/" element={<Home/>}  ></Route>
+        <Route path="/login" element={<Login setislogedin={setislogedin} />}  ></Route>
+        <Route path="/signup" element={<Singhup  setislogedin={setislogedin}/>}  ></Route>
+        <Route path="/dasboard" element={<Dasboard/>}  ></Route>
+     </Routes>
     </div>
   );
 }
