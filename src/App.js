@@ -8,14 +8,14 @@ import Login from './component/Login';
 import Dasboard from './component/Dasboard';
 import Navbar from './component/Navbar';
 import Singhup from './component/Singhup';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 function App() {
 
   const [islogedin,setislogedin]=useState(false);
 
 
   return (
-    <div className="App">
+    <div className="w-screen h-screen bg-black flex flex-col ">
       
      <Navbar
      islogedin={islogedin}

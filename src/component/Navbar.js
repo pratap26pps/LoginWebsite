@@ -7,7 +7,7 @@ export const Navbar = (props) => {
     let islogedin=props.islogedin;
     let setislogedin=props.setislogedin;
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-between  items-center w-11/12 max-w[1160px] py-4 mx-auto'>
 
     <Link to="/" className='h-8 w-11'>
     <img src={logo} alt='logo'></img>
@@ -15,26 +15,26 @@ export const Navbar = (props) => {
    
 
       <nav className='flex gap-3'>
-        <ul className='flex gap-3'>
+        <ul className='flex gap-3 text-white'>
             <li>
                 <Link to="/">Home</Link>
             </li>
             <li>
                 <Link to="/about">About</Link>
             </li>
-            <li>
+            <li className='scale-0 lg:scale-95'>
                 <Link to="/contact">Contact</Link>
             </li>
         </ul>
       </nav>
-        <div className='flex gap-3'> 
+        <div className='flex gap-3 text-white'> 
     {    !islogedin &&
             <Link to="/login">
-           <button>login</button>
+           <button className='bg-neutral-700 p-1 w-16 rounded-xl border border-red-500'>login</button>
             </Link>
      } {     !islogedin &&
             <Link to="/signup">
-          <button>   sign Up </button>
+          <button className='bg-neutral-700 p-1 w-20 rounded-xl border border-red-500'>   sign Up </button>
             </Link>
 }{        islogedin &&
             <Link to="/">
@@ -47,7 +47,7 @@ export const Navbar = (props) => {
             </Link>
 }{        islogedin &&
             <Link to="/dasboard">
-          <button>  Dasboard </button>
+          <button>  Dashboard </button>
             </Link>
     }
     </div>

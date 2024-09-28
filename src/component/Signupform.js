@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AiOutlineEye,AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
-export const Signupform = (setislogedin) => {
+export const Signupform = ({setislogedin}) => {
 
   const Navigate=useNavigate();
   const [showpassword,setshowpassword]=useState(false);
@@ -48,22 +48,22 @@ function submithandler(event){
 }
 
   return (
-    <div className='mr-96'>
+    <div className=''>
       {/* student instructor tab */}
-    <div>
-      <button>
-        student
+    {/* <div >
+      <button className='text-white'>
+        student-
       </button>
-      <button>
+      <button className='text-white'>
         instructor
       </button>
-    </div>
-    <form >
+    </div> */}
+    <form  >
       {/* first name and last name */}
-      <div>
+      <div className='flex flex-wrap gap-2 '>
          <label>
-        <p>first name<sup>*</sup></p>
-        <input
+        <p className='text-white '>first name<sup className='text-red-600'>*</sup></p>
+        <input    className='p-1 rounded-sm bg-slate-800'
         type='text'
         name="firstname"
         onChange={changehandler}
@@ -73,8 +73,8 @@ function submithandler(event){
       </label>
 
       <label>
-        <p>last name<sup>*</sup></p>
-        <input
+        <p className='text-white'>last name<sup className='text-red-600'>*</sup></p>
+        <input     className='p-1 rounded-sm bg-slate-800'
         type='text'
         name="lastname"
         onChange={changehandler}
@@ -85,8 +85,8 @@ function submithandler(event){
       </div>
       {/* email add */}
       <label>
-        <p>email address<sup>*</sup></p>
-        <input
+        <p className='text-white'>email address<sup className='text-red-600'>*</sup></p>
+        <input     className='p-1 rounded-sm bg-slate-800 w-60'
         type='email'
         name="email"
         onChange={changehandler}
@@ -95,10 +95,10 @@ function submithandler(event){
         ></input>
       </label>
    {/* create password and conform password */}
-
+ <div className='flex flex-wrap gap-2'>
    <label>
-        <p>create password<sup>*</sup></p>
-        <input
+        <p className='text-white'>create password<sup className='text-red-600'>*</sup></p>
+        <input     className='p-1 rounded-sm bg-slate-800'
         type={showpassword ?("text"):("assword")}
         name="password"
         onChange={changehandler}
@@ -112,8 +112,8 @@ function submithandler(event){
       </label>
 
       <label>
-        <p>conform password<sup>*</sup></p>
-        <input
+        <p className='text-white'>conform password<sup className='text-red-600'>*</sup></p>
+        <input      className='p-1 rounded-sm bg-slate-800'
         type={showpassword ?("text"):("assword")}
         name="conformpassword"
         onChange={changehandler}
@@ -125,10 +125,10 @@ function submithandler(event){
             </span>
 
       </label>
-
+      </div>
 
     </form>
-<button onClick={submithandler}>create account</button>
+<button className='bg-yellow-300 py-1 px-6 rounded-sm w-60' onClick={submithandler}>create account</button>
 
     </div>
   )

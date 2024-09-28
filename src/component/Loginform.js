@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { AiOutlineEye,AiOutlineEyeInvisible } from "react-icons/ai";
+// import { AiOutlineEye,AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
-export const Loginform = (setislogedin) => {
+
+export const Loginform = ({setislogedin}) => {
 
 
    const Navigate=useNavigate();
@@ -21,8 +22,9 @@ export const Loginform = (setislogedin) => {
         ))
     }
 
-  function submithandler(){
-  // setislogedin(true)
+  function submithandler(event){
+    event.preventDefault();
+     setislogedin(true);
     toast.success("logged in");
     Navigate("/dasboard");
   }
@@ -30,12 +32,15 @@ export const Loginform = (setislogedin) => {
 
   return (
     <div>
-      <form onSubmit={submithandler} className='mr-[267px] mt-14'>
+
+
+      
+      <form onSubmit={submithandler} className='  '>
         <label>
-            <p>
-                email address<sub>*</sub>
+            <p className='text-white'>
+                email address<sup className='text-red-600'>*</sup>
             </p>
-            <input
+            <input   className='p-1 rounded-sm bg-slate-800 w-60'
             required
             type='email'
             name="email"
@@ -46,10 +51,10 @@ export const Loginform = (setislogedin) => {
         </label>
 
         <label>
-            <p>
-                password<sub>*</sub>
+            <p className='text-white'>
+                password<sup className='text-red-600'>*</sup>
             </p>
-            <input
+            <input      className='p-1 rounded-sm bg-slate-800 w-60'
             required
             type={showpassword ? ("text"):("password")}
             value={formdata.password}
@@ -57,18 +62,20 @@ export const Loginform = (setislogedin) => {
             onChange={changehandler}
             placeholder='enter password'
             />
-            <span onClick={()=>setshowpassword((prev)=>!prev)}>
+            {/* <span className='text-yellow-400' onClick={()=>setshowpassword((prev)=>!prev)}>
                 {showpassword?(<AiOutlineEye/>):(<AiOutlineEyeInvisible />)}
-            </span>
+            </span> */}
 
        <Link>
-       <p>forgot password</p>
+       <p className='text-cyan-600'>forgot password</p>
        </Link>
 
         </label>
-     <button>sign in</button>
-      </form>
+     <button className='bg-yellow-400 py-2 px-24 rounded-md'>sign in</button>
+     
 
+ 
+ </form>
     </div>
   )
 }

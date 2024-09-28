@@ -11,7 +11,7 @@ root.render(
 
   <Router>
   <App />
-  <ToastContainer></ToastContainer>
+  <ToastContainer className='mt-14 md:mt-20 sm:mt-6'></ToastContainer>
 
  
   </Router>
