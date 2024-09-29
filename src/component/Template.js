@@ -34,7 +34,7 @@ export const Template = ({title,desc1,desc2,image,formtype,setislogedin}) => {
      </div>
 
      <div  className=' flex flex-col h-12 w-44  mt-10 ml-16 lg:ml-0 lg:mr-20 scale-0 lg:scale-95'>
-          <img  src={pankaj} alt='photo'>
+          <img  src={pankaj} alt='card'>
           </img>
      </div>
     
