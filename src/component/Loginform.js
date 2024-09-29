@@ -11,7 +11,7 @@ export const Loginform = ({setislogedin}) => {
     const [formdata,setformdata]=useState({
       email:"", password:""  
     })
-    const [showpassword,setshowpassword]=useState(false);
+    const [showpassword]=useState(false);
       
     function changehandler(event){
         setformdata((prevdata)=>(

@@ -28,7 +28,7 @@ function submithandler(event){
         toast.error("form cannot be blank");
        }
 
-      if(formdata.password!= formdata.conformpassword){
+      if(formdata.password!== formdata.conformpassword){
        
         toast.error("passwords do not match");
       }
